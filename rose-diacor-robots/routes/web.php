@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RobotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RobotController::class, 'index']);
+Route::post('/create', [RobotController::class, 'create'])->name('create');
+Route::get('/read', [RobotController::class, 'read'])->name('read');
+Route::post('/update', [RobotController::class, 'update'])->name('update');
+Route::delete('/delete', [RobotController::class, 'delete'])->name('delete');
+Route::get('/edit', [RobotController::class, 'edit'])->name('edit');

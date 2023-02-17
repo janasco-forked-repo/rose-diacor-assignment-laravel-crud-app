@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('robots', function (Blueprint $table) {
             $table->id();
+            $table->string('robot_name');
+            $table->string('robot_desc');
+            $table->string('robot_creator');
+            $table->string('robot_country');
+            $table->string('robot_year');
+            $table->string('robot_type');
+            $table->string('robot_image');
             $table->timestamps();
         });
     }
